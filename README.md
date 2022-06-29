@@ -1,43 +1,31 @@
-API Data Wilayah Indonesia
-==========================
+# API Data Wilayah Indonesia
 
 Repository ini berisi source code untuk generate (REST) API statis berisi data wilayah Indonesia
 serta perintah untuk mendeploynya ke _static hosting_ [Github Page](https://pages.github.com/).
 
-Demo: [https://emsifa.github.io/api-wilayah-indonesia](https://emsifa.github.io/api-wilayah-indonesia)
+Demo: [https://semyluase.github.io/api-indonesia/](https://semyluase.github.io/api-indonesia/)
 
-#### Apa yang dimaksud API statis? 
+#### Apa yang dimaksud API statis?
 
 API statis adalah API yang _endpoint_-nya terdiri dari file statis.
 
 #### Keuntungan API statis?
 
-* Dapat dihosting pada _static file hosting_ seperti Github Page, Netlify, dsb.
-* Proses lebih cepat karena tidak membutuhkan server-side scripting.
+- Dapat dihosting pada _static file hosting_ seperti Github Page, Netlify, dsb.
+- Proses lebih cepat karena tidak membutuhkan server-side scripting.
 
 #### Bagaimana cara kerjanya?
 
-* Daftar provinsi, kab/kota, kecamatan, kelurahan/desa disimpan pada folder `data` berupa file `csv` (agar mudah diedit).
-* Kemudian script `generate.php` dijalankan. Script ini akan membaca file `csv` didalam folder `data`, kemudian men-generate ribuan endpoint (file) kedalam folder `static/api`.
-* API siap 'dihidangkan'.
-
-#### Saya mau hosting di Github saya sendiri, bagaimana caranya?
-
-* Fork repository ini. 
-* Buka cmd/terminal.
-* `git clone https://github.com/usernamekamu/api-wilayah-indonesia.git`.
-* `echo "" > hello.txt`.
-* `git add hello.txt`.
-* `git push origin master`.
-* Tunggu beberapa saat sampai _Github_ build _Github Page_ kamu.
-* Buka URL `https://usernamekamu.github.io/api-wilayah-indonesia`.
+- Daftar provinsi, kab/kota, kecamatan, kelurahan/desa disimpan pada folder `data` berupa file `csv` (agar mudah diedit).
+- Kemudian script `generate.php` dijalankan. Script ini akan membaca file `csv` didalam folder `data`, kemudian men-generate ribuan endpoint (file) kedalam folder `static/api`.
+- API siap 'dihidangkan'.
 
 ## ENDPOINTS
 
 #### 1. Mengambil Daftar Provinsi
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/provinces.json
+GET https://semyluase.github.io/api-indonesia/api/provinces.json
 ```
 
 Contoh Response:
@@ -59,13 +47,13 @@ Contoh Response:
 #### 2. Mengambil Daftar Kab/Kota pada Provinsi Tertentu
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/regencies/{provinceId}.json
+GET https://semyluase.github.io/api-indonesia/api/regencies/{provinceId}.json
 ```
 
 Contoh untuk mengambil daftar kab/kota di provinsi Aceh (ID = 11):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/regencies/11.json
+GET https://semyluase.github.io/api-indonesia/api/regencies/11.json
 ```
 
 Contoh Response:
@@ -89,13 +77,13 @@ Contoh Response:
 #### 3. Mengambil Daftar Kecamatan pada Kab/Kota Tertentu
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/districts/{regencyId}.json
+GET https://semyluase.github.io/api-indonesia/api/districts/{regencyId}.json
 ```
 
 Contoh untuk mengambil daftar kecamatan di Aceh Selatan (ID = 1103):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/districts/1103.json
+GET https://semyluase.github.io/api-indonesia/api/districts/1103.json
 ```
 
 Contoh Response:
@@ -119,13 +107,13 @@ Contoh Response:
 #### 4. Mengambil Daftar Kelurahan pada Kecamatan Tertentu
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/villages/{districtId}.json
+GET https://semyluase.github.io/api-indonesia/api/villages/{districtId}.json
 ```
 
 Contoh untuk mengambil daftar kelurahan di Trumon (ID = 1103010):
 
 ```
-GET https://emsifa.github.io/api-wilayah-indonesia/api/villages/1103010.json
+GET https://semyluase.github.io/api-indonesia/api/villages/1103010.json
 ```
 
 Contoh Response:
